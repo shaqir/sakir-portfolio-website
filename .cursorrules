@@ -1,0 +1,48 @@
+# Cursor Rules — Sakir Saiyed Portfolio
+
+You are working on a React 18 + Vite 6 personal portfolio website.
+
+## Key Principles
+
+1. **Data-driven content**: All text content lives in `src/data/siteData.js`. Never hardcode strings in JSX.
+2. **Vanilla CSS only**: No Tailwind, no CSS-in-JS. Each component has a co-located `.css` file.
+3. **CSS variables for theming**: Always use `var(--token-name)` from `src/styles/tokens.css`. Never hardcode colors.
+4. **Path aliases**: Use `@components`, `@sections`, `@hooks`, `@data`, `@styles`, `@assets`. Never use relative paths.
+5. **Functional components**: Default exports. Use hooks from `@hooks` (useTheme, useScrollReveal).
+6. **Section pattern**: Every section gets `useScrollReveal()` ref, `.section` class, `.container` wrapper, `.reveal` children.
+7. **BEM-ish naming**: `.block__element`, `.block--modifier` (e.g., `.hero__content`, `.btn--primary`).
+
+## When editing sections
+
+- Import data from `@data/siteData`
+- Use `<span className="section-label">` → `<h2 className="section-title">` → `<p className="section-subtitle">` pattern
+- Apply `.reveal` and `.reveal-delay-{1,2,3}` classes for scroll animations
+- Alternate sections use `className="section section--alt"` for the secondary background
+
+## When editing styles
+
+- Define in the section's co-located `.css` file
+- Use CSS variables from tokens.css for all colors, fonts, spacing
+- Mobile breakpoint: `@media (max-width: 768px)`
+- Card pattern: `background: var(--bg-card)`, `border: 1px solid var(--border)`, `border-radius: 14-16px`
+- Hover pattern: `border-color: var(--border-hover)`, `transform: translateY(-2px)`, `box-shadow: var(--shadow-card-hover)`
+- Transition pattern: `transition: all 0.3s var(--ease-out-expo)`
+
+## Fonts
+
+- Headings: `var(--font-display)` — Inter
+- Body: `var(--font-body)` — Inter
+- Code/labels: `var(--font-mono)` — Fira Code
+
+## Icons
+
+- UI icons: `import { IconName } from 'lucide-react'`
+- Brand icons: `import { GithubIcon, LinkedInIcon, MediumIcon } from '@components/Icons'`
+
+## Don't
+
+- Don't install Tailwind, React Router, SASS, or CSS-in-JS libraries
+- Don't use class components
+- Don't put content strings directly in JSX
+- Don't use relative imports (../../)
+- Don't use localStorage outside of useTheme hook

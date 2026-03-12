@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "npm run dev",
+      "npm run build",
+      "npm run lint",
+      "npm run format",
+      "npm run preview",
+      "npx vite",
+      "cat",
+      "ls",
+      "find",
+      "grep",
+      "head",
+      "tail",
+      "wc"
+    ],
+    "deny": [
+      "rm -rf /",
+      "npm publish"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════
+   TOP — Lead paragraphs full width
+   ═══════════════════════════════════════════ */
+.about__top {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.about__top p {
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.about__top p:last-child {
+  margin-bottom: 0;
+}
+
+.about__lead::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════
+   BOTTOM — Secondary text + Highlight cards
+   ═══════════════════════════════════════════ */
+.about__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about__secondary p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.about__secondary p:last-child {
+  margin-bottom: 0;
+}
+
+.about__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.highlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  transition: all 0.3s var(--ease-out-expo);
+}
+.highlight-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(var(--hover-lift));
+}
+
+.highlight-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--icon-bg);
+  border-radius: 8px;
+  color: var(--icon-color);
+  margin-bottom: 0.75rem;
+}
+
+.highlight-card h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+.highlight-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .about__bottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about__highlights {
+    grid-template-columns: 1fr;
+  }
+  .about__lead::first-letter {
+    font-size: 2.5rem;
+  }
+}
