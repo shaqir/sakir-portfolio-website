@@ -17,6 +17,8 @@
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s var(--ease-out-expo);
   --transition-slow: 0.5s var(--ease-out-expo);
+  --anim-entrance: 0.8s var(--ease-out-expo) both;
+  --anim-scroll-bounce: 1.8s infinite;
 
   /* Layout */
   --container: 1200px;

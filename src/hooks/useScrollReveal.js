@@ -1,5 +1,15 @@
 import { useEffect, useRef } from 'react'
 
+/**
+ * Animate `.reveal` children into view on scroll using IntersectionObserver.
+ * Attach the returned ref to a section container. Each `.reveal` child triggers
+ * once and is then unobserved.
+ *
+ * @param {Object} [options] - IntersectionObserver options.
+ * @param {number} [options.threshold=0.1] - Visibility ratio to trigger reveal.
+ * @param {string} [options.rootMargin='0px 0px -50px 0px'] - Observer root margin.
+ * @returns {import('react').RefObject<HTMLElement>} Ref to attach to the container element.
+ */
 export function useScrollReveal(options = {}) {
   const ref = useRef(null)
 
