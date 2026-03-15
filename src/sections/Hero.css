@@ -129,7 +129,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 1.75rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
 .hero__headline {
@@ -140,7 +140,7 @@
   line-height: 1.15;
   padding-bottom: 0.08em;
   margin-bottom: 0.75rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: heroBlurIn 1.4s var(--ease-apple) both;
   background: linear-gradient(
     135deg,
     var(--gradient-blue) 0%,
@@ -162,7 +162,7 @@
   line-height: 1.42;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
 .hero__subhead-line {
@@ -183,14 +183,14 @@
   letter-spacing: -0.022em;
   max-width: 440px;
   margin-bottom: 2.5rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
 .hero__actions {
   display: flex;
   gap: 2rem;
   margin-bottom: 3.5rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
 .hero__actions .link-arrow {
@@ -204,7 +204,7 @@
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  animation: fadeUp 1s var(--ease-out-expo) both;
+  animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
 .hero__stat {
@@ -233,11 +233,35 @@
 /* ═══════════════════════════════════════════
    RIGHT — Photo
    ═══════════════════════════════════════════ */
+@keyframes heroBlurIn {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .hero__photo-col {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeUp 1.2s var(--ease-out-expo) both;
+  animation: heroScaleIn 1.4s var(--ease-apple) both;
 }
 
 .hero__photo-frame {

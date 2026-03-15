@@ -8,13 +8,13 @@ export default function Testimonials() {
   return (
     <section className="section" ref={ref}>
       <div className="container container--wide">
-        <div className="section-header section-header--centered reveal">
+        <div className="section-header section-header--centered reveal--blur">
           <p className="section-eyebrow">Testimonials</p>
           <h2 className="section-headline section-headline--centered">What colleagues say.</h2>
         </div>
-        <div className="testimonials__grid">
+        <div className="testimonials__grid" data-stagger>
           {testimonials.map((t, i) => (
-            <div className={`testimonial reveal reveal-delay-${Math.min(i + 1, 3)}`} key={t.name}>
+            <div className="testimonial reveal--scale" key={t.name}>
               <blockquote className="testimonial__quote">{t.quote}</blockquote>
               <div className="testimonial__author">
                 <span className="testimonial__avatar">{t.initials}</span>

@@ -17,16 +17,16 @@ export default function Projects() {
   return (
     <section id="projects" className="section section--alt" ref={ref}>
       <div className="container container--wide">
-        <div className="section-header section-header--centered reveal">
+        <div className="section-header section-header--centered reveal--blur">
           <p className="section-eyebrow">Featured Work</p>
           <h2 className="section-headline section-headline--centered">Selected projects.</h2>
           <p className="section-desc section-desc--centered">
             Scalable architecture, real-time systems, and production-quality engineering.
           </p>
         </div>
-        <div className="projects__grid">
+        <div className="projects__grid" data-stagger>
           {projects.map((project, i) => (
-            <div className={`project reveal reveal-delay-${Math.min(i + 1, 3)}`} key={project.title}>
+            <div className="project reveal--scale" key={project.title}>
               <div className="project__accent" style={{ background: cardAccents[i] }} />
               <div className="project__glow" style={{ background: cardAccents[i] }} />
               <div className="project__body">

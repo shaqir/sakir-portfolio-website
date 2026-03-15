@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section" ref={ref}>
       <div className="container container--wide">
-        <div className="section-header section-header--centered reveal">
+        <div className="section-header section-header--centered reveal--blur">
           <p className="section-eyebrow">Expertise</p>
           <h2 className="section-headline section-headline--centered">Technical toolkit.</h2>
           <p className="section-desc section-desc--centered">
@@ -16,10 +16,10 @@ export default function Skills() {
             infrastructure.
           </p>
         </div>
-        <div className="skills__grid">
+        <div className="skills__grid" data-stagger>
           {skillCategories.map((category, i) => (
             <div
-              className={`skills__category reveal reveal-delay-${Math.min(Math.floor(i / 2) + 1, 3)}`}
+              className="skills__category reveal--scale"
               key={category.title}
             >
               <h3 className="skills__title">{category.title}</h3>

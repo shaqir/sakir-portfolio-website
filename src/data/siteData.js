@@ -36,10 +36,8 @@ export const heroStats = [
 ]
 
 export const aboutText = [
-  `Over the past decade, I've built and shipped software that people depend on daily — from patient-facing healthcare apps to real-time financial trading tools and IoT device monitors. My work sits at the intersection of mobile engineering, clean architecture, and applied AI.`,
-  `I started with Java before going deep into the Apple ecosystem with Swift and UIKit. Today, I architect modular iOS applications using SwiftUI and modern concurrency, while also building cross-platform solutions with Flutter for teams that need to move fast.`,
-  `Most recently, I engineered an AI-powered emergency triage system — a production-grade ML pipeline built end-to-end for a clinical environment where precision matters most. This project captures what I care about: using technology to solve real, high-stakes problems.`,
-  `Currently deepening my expertise in predictive analytics, responsible AI, and human-centred design at SAIT Calgary. I bring the same rigor to AI that I've always brought to mobile: clean code, thoughtful architecture, and a relentless focus on the end user.`,
+  `10+ years building software people depend on daily — healthcare apps, financial trading tools, IoT monitors, and AI systems. I work at the intersection of mobile engineering, clean architecture, and applied machine learning.`,
+  `I architect modular iOS applications with SwiftUI and modern concurrency, build cross-platform solutions with Flutter, and engineer end-to-end ML pipelines. Most recently, I built an AI-powered emergency triage system for a clinical environment where precision is everything.`,
 ]
 
 export const aboutHighlights = [

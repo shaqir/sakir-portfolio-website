@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section section--alt" ref={ref}>
       <div className="container">
-        <div className="contact__content reveal">
+        <div className="contact__content reveal--blur">
           <p className="section-eyebrow" style={{ textAlign: 'center' }}>
             Get in Touch
           </p>

@@ -5,11 +5,18 @@
   --font-body: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans',
     'Helvetica Neue', system-ui, sans-serif;
 
-  /* Motion */
+  /* Motion — Apple-inspired curves */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-apple-smooth: cubic-bezier(0.42, 0, 0.58, 1);
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s var(--ease-out-expo);
   --transition-slow: 0.5s var(--ease-out-expo);
+
+  /* Reveal animation timing */
+  --reveal-duration: 1s;
+  --reveal-distance: 40px;
+  --reveal-stagger: 0.12s;
 
   /* Layout */
   --container: 1200px;

@@ -8,7 +8,7 @@ export default function Experience() {
   return (
     <section id="experience" className="section" ref={ref}>
       <div className="container container--wide">
-        <div className="section-header reveal">
+        <div className="section-header reveal--blur">
           <p className="section-eyebrow">Experience</p>
           <h2 className="section-headline">Where I've built.</h2>
           <p className="section-desc">
@@ -16,10 +16,10 @@ export default function Experience() {
             enterprise organizations.
           </p>
         </div>
-        <div className="exp__list">
+        <div className="exp__list" data-stagger>
           {experiences.map((exp, i) => (
             <div
-              className={`exp__item reveal reveal-delay-${Math.min(i + 1, 3)}`}
+              className="exp__item reveal"
               key={exp.title + exp.company}
             >
               <div className="exp__header">
@@ -39,7 +39,7 @@ export default function Experience() {
           ))}
         </div>
 
-        <div className="exp__edu reveal reveal-delay-2">
+        <div className="exp__edu reveal">
           <h3 className="exp__edu-heading">Education</h3>
           <div className="exp__edu-grid">
             {education.map((edu) => (

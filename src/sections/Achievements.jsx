@@ -9,16 +9,16 @@ export default function Achievements() {
   return (
     <section id="achievements" className="section section--alt" ref={ref}>
       <div className="container container--wide">
-        <div className="section-header section-header--centered reveal">
+        <div className="section-header section-header--centered reveal--blur">
           <p className="section-eyebrow">Achievements</p>
           <h2 className="section-headline section-headline--centered">
             Highlights & milestones.
           </h2>
         </div>
-        <div className="achievements__grid">
+        <div className="achievements__grid" data-stagger>
           {achievements.map((item, i) => (
             <div
-              className={`achievement reveal reveal-delay-${Math.min(Math.floor(i / 3) + 1, 3)}`}
+              className="achievement reveal--scale"
               key={item.title}
             >
               <span className="achievement__icon">

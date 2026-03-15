@@ -5,9 +5,12 @@ import { useEffect, useRef } from 'react'
  * Attach the returned ref to a section container. Each `.reveal` child triggers
  * once and is then unobserved.
  *
+ * Elements with `[data-stagger]` will have stagger delays auto-applied to their
+ * direct children that have the `.reveal` class.
+ *
  * @param {Object} [options] - IntersectionObserver options.
  * @param {number} [options.threshold=0.1] - Visibility ratio to trigger reveal.
- * @param {string} [options.rootMargin='0px 0px -50px 0px'] - Observer root margin.
+ * @param {string} [options.rootMargin='0px 0px -60px 0px'] - Observer root margin.
  * @returns {import('react').RefObject<HTMLElement>} Ref to attach to the container element.
  */
 export function useScrollReveal(options = {}) {
@@ -16,6 +19,14 @@ export function useScrollReveal(options = {}) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    // Auto-apply stagger delays to children of [data-stagger] containers
+    el.querySelectorAll('[data-stagger]').forEach((container) => {
+      const children = container.querySelectorAll(':scope > .reveal, :scope > .reveal--scale')
+      children.forEach((child, i) => {
+        child.classList.add(`reveal-delay-${i + 1}`)
+      })
+    })
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,12 +39,12 @@ export function useScrollReveal(options = {}) {
       },
       {
         threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '0px 0px -50px 0px',
+        rootMargin: options.rootMargin || '0px 0px -60px 0px',
       },
     )
 
-    // Observe the element and all children with .reveal class
-    const revealElements = el.querySelectorAll('.reveal')
+    // Observe all reveal variants
+    const revealElements = el.querySelectorAll('.reveal, .reveal--scale, .reveal--blur')
     revealElements.forEach((child) => observer.observe(child))
     if (el.classList.contains('reveal')) observer.observe(el)
 

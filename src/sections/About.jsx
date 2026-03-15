@@ -9,42 +9,34 @@ export default function About() {
 
   return (
     <section id="about" className="section section--alt" ref={ref}>
-      <div className="container container--wide">
-        <div className="about__intro reveal">
+      <div className="container">
+        <div className="about__top reveal--blur">
           <img
             src={profilePhoto}
             alt="Sakir Saiyed"
             className="about__photo"
-            width="120"
-            height="120"
+            width="140"
+            height="140"
           />
-          <div className="section-header">
+          <div className="about__header">
             <p className="section-eyebrow">About</p>
             <h2 className="section-headline">A decade of shipping software that matters.</h2>
+            <div className="about__prose">
+              {aboutText.map((text, i) => (
+                <p key={i}>{text}</p>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="about__body reveal reveal-delay-1">
-          <div className="about__prose">
-            <p>{aboutText[0]}</p>
-            <p>{aboutText[1]}</p>
-          </div>
-          <div className="about__prose">
-            <p>{aboutText[2]}</p>
-            <p>{aboutText[3]}</p>
-          </div>
-        </div>
-
-        <div className="about__highlights reveal reveal-delay-2">
+        <div className="about__highlights" data-stagger>
           {aboutHighlights.map((item) => (
-            <div className="about__highlight" key={item.title}>
+            <div className="about__highlight reveal--scale" key={item.title}>
               <span className="about__highlight-icon">
                 <SectionIcon name={item.icon} size={20} />
               </span>
-              <div>
-                <h4 className="about__highlight-title">{item.title}</h4>
-                <p className="about__highlight-desc">{item.description}</p>
-              </div>
+              <h4 className="about__highlight-title">{item.title}</h4>
+              <p className="about__highlight-desc">{item.description}</p>
             </div>
           ))}
         </div>
