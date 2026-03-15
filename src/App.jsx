@@ -18,9 +18,9 @@ export default function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <Projects />
         <About />
         <Skills />
-        <Projects />
         <Experience />
         <Achievements />
         <Testimonials />

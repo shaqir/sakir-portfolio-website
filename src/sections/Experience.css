@@ -1,139 +1,117 @@
-.exp__timeline {
+.exp__list {
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-.exp__timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 1.5px;
-  background: var(--border);
 }
 
 .exp__item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-  position: relative;
-}
-.exp__item:not(:last-child) {
+  padding: 2.5rem 0;
   border-bottom: 1px solid var(--border);
 }
-
-.exp__dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 2.5px solid var(--accent);
-  background: var(--bg-primary);
-  position: relative;
-  z-index: 1;
-  margin-top: 5px;
-  flex-shrink: 0;
-  transition: all 0.3s var(--ease-out-expo);
-}
-.exp__item:hover .exp__dot {
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
-  transform: scale(1.15);
+.exp__item:first-child {
+  padding-top: 0;
 }
 
-.exp__content h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: var(--text-primary);
-}
-.exp__company {
-  color: var(--accent);
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-.exp__meta {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  margin-bottom: 0.75rem;
+.exp__header {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
   gap: 1rem;
-  flex-wrap: wrap;
 }
-.exp__content p {
+
+.exp__role {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.15rem;
+}
+
+.exp__company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.exp__date {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exp__desc {
   color: var(--text-secondary);
-  font-size: 0.93rem;
+  font-size: 0.9375rem;
   line-height: 1.7;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  max-width: 720px;
 }
+
 .exp__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-.exp__tags span {
-  font-family: var(--font-mono);
-  font-size: var(--tag-font-size);
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-tag);
-  background: var(--tag-bg);
-  color: var(--tag-color);
 }
 
-/* ═══════════════════════════════════════════
-   EDUCATION
-   ═══════════════════════════════════════════ */
+.exp__tags span {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  font-weight: 500;
+}
+
+/* Education */
 .exp__edu {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
+
+.exp__edu-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
 }
 
 .exp__edu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
 }
 
-.exp__edu-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-  transition: all 0.3s var(--ease-out-expo);
-}
-.exp__edu-card:hover {
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(var(--hover-lift));
+.exp__edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.exp__edu-card h4 {
-  font-size: 0.95rem;
+.exp__edu-degree {
+  font-size: 0.9375rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
   color: var(--text-primary);
 }
 
 .exp__edu-school {
-  display: block;
+  font-size: 0.875rem;
   color: var(--accent);
-  font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.35rem;
 }
 
 .exp__edu-meta {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--text-tertiary);
-  letter-spacing: 0.03em;
 }
 
 @media (max-width: 768px) {
+  .exp__header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
   .exp__edu-grid {
     grid-template-columns: 1fr;
   }

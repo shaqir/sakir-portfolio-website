@@ -6,22 +6,21 @@ export default function Testimonials() {
   const ref = useScrollReveal()
 
   return (
-    <section className="section section--alt" ref={ref}>
-      <div className="container">
-        <div className="reveal">
-          <span className="section-label">Testimonials</span>
-          <h2 className="section-title">What colleagues say</h2>
+    <section className="section" ref={ref}>
+      <div className="container container--wide">
+        <div className="section-header section-header--centered reveal">
+          <p className="section-eyebrow">Testimonials</p>
+          <h2 className="section-headline section-headline--centered">What colleagues say.</h2>
         </div>
         <div className="testimonials__grid">
           {testimonials.map((t, i) => (
-            <div className={`testimonial-card reveal reveal-delay-${Math.min(i + 1, 3)}`} key={t.name}>
-              <span className="testimonial-card__quote">"</span>
-              <blockquote>{t.quote}</blockquote>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__avatar">{t.initials}</div>
+            <div className={`testimonial reveal reveal-delay-${Math.min(i + 1, 3)}`} key={t.name}>
+              <blockquote className="testimonial__quote">{t.quote}</blockquote>
+              <div className="testimonial__author">
+                <span className="testimonial__avatar">{t.initials}</span>
                 <div>
-                  <div className="testimonial-card__name">{t.name}</div>
-                  <div className="testimonial-card__role">{t.role}</div>
+                  <span className="testimonial__name">{t.name}</span>
+                  <span className="testimonial__role">{t.role}</span>
                 </div>
               </div>
             </div>

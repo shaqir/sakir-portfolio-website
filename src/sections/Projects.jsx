@@ -1,50 +1,52 @@
 import { useScrollReveal } from '@hooks'
 import { projects } from '@data/siteData'
-import { GithubIcon } from '@components/Icons'
-import { ExternalLink } from 'lucide-react'
 import './Projects.css'
+
+const cardAccents = [
+  'linear-gradient(135deg, #2997ff, #64d2ff)',
+  'linear-gradient(135deg, #30d158, #64d2ff)',
+  'linear-gradient(135deg, #bf5af2, #ff375f)',
+  'linear-gradient(135deg, #ff9f0a, #ff375f)',
+  'linear-gradient(135deg, #ff375f, #bf5af2)',
+  'linear-gradient(135deg, #64d2ff, #30d158)',
+]
 
 export default function Projects() {
   const ref = useScrollReveal()
 
   return (
-    <section id="projects" className="section" ref={ref}>
-      <div className="container">
-        <div className="reveal">
-          <span className="section-label">Featured Projects</span>
-          <h2 className="section-title">Selected work</h2>
-          <p className="section-subtitle">
-            Projects that demonstrate scalable architecture, real-time systems, and
-            production-quality engineering.
+    <section id="projects" className="section section--alt" ref={ref}>
+      <div className="container container--wide">
+        <div className="section-header section-header--centered reveal">
+          <p className="section-eyebrow">Featured Work</p>
+          <h2 className="section-headline section-headline--centered">Selected projects.</h2>
+          <p className="section-desc section-desc--centered">
+            Scalable architecture, real-time systems, and production-quality engineering.
           </p>
         </div>
         <div className="projects__grid">
           {projects.map((project, i) => (
-            <div
-              className={`project-card reveal reveal-delay-${Math.min(i + 1, 3)}`}
-              key={project.title}
-            >
-              <div className="project-card__body">
-                <div className="project-card__number">
-                  {project.number} — {project.tag}
-                </div>
-                <h3>{project.title}</h3>
-                <p className="project-card__desc">{project.description}</p>
-                <div className="project-card__tech">
+            <div className={`project reveal reveal-delay-${Math.min(i + 1, 3)}`} key={project.title}>
+              <div className="project__accent" style={{ background: cardAccents[i] }} />
+              <div className="project__glow" style={{ background: cardAccents[i] }} />
+              <div className="project__body">
+                <span className="project__tag">{project.tag}</span>
+                <h3 className="project__title">{project.title}</h3>
+                <p className="project__desc">{project.description}</p>
+                <div className="project__tech">
                   {project.tech.map((t) => (
                     <span key={t}>{t}</span>
                   ))}
                 </div>
-                <div className="project-card__links">
+                <div className="project__links">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-link"
+                      className="link-arrow link-arrow--small"
                     >
-                      <GithubIcon size={14} />
-                      GitHub
+                      View on GitHub
                     </a>
                   )}
                   {project.demo && (
@@ -52,16 +54,12 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-link"
+                      className="link-arrow link-arrow--small"
                     >
-                      <ExternalLink size={14} />
-                      Demo
+                      Live demo
                     </a>
                   )}
                 </div>
-              </div>
-              <div className="project-card__meta">
-                <span className="project-card__impact">{project.impact}</span>
               </div>
             </div>
           ))}
