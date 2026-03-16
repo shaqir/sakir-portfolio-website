@@ -7,7 +7,7 @@
 
 export const siteConfig = {
   name: 'Sakir Saiyed',
-  title: 'AI Developer and Senior Mobile Developer',
+  title: 'AI Engineer & Senior iOS Mobile Developer',
   tagline: 'Building AI Powered intelligent mobile and web apps.',
   location: 'Calgary, Alberta, Canada',
   availability: 'Open to opportunities',
