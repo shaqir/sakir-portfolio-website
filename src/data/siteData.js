@@ -18,7 +18,7 @@ export const siteConfig = {
 
 export const socialLinks = {
   email: 'sakirsaiyed29@gmail.com',
-  linkedin: 'https://linkedin.com/in/sakirali-saiyed-57387762',
+  linkedin: 'https://www.linkedin.com/in/sakir-saiyed-57387762/',
   github: 'https://github.com/shaqir',
   medium: 'https://medium.com/@sakirsaiyed29',
 }
