@@ -20,8 +20,8 @@ export default function Navbar({ theme, toggleTheme }) {
   return (
     <nav className="nav" role="navigation" aria-label="Main navigation">
       <div className="container container--wide nav__inner">
-        <a href="#" className="nav__brand">
-          {siteConfig.name}
+        <a href="#hero" className="nav__brand" onClick={(e) => handleLinkClick(e, '#hero')}>
+          Home
         </a>
 
         <div className={`nav__right ${mobileOpen ? 'active' : ''}`}>
