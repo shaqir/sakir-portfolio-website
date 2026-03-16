@@ -7,10 +7,11 @@
 
 export const siteConfig = {
   name: 'Sakir Saiyed',
-  title: 'AI Engineer & Senior iOS Mobile Developer',
+  title: 'AI Engineer & Senior Mobile Developer',
   tagline: 'Building AI Powered intelligent mobile and web apps.',
   location: 'Calgary, Alberta, Canada',
   availability: 'Open to opportunities',
+  targetRoles: 'Senior iOS Developer · AI Engineer · Mobile Tech Lead — Contract Roles',
   resumeUrl: '/resume.pdf',
   website: 'https://sakiralisaiyed.com',
 }
@@ -33,6 +34,17 @@ export const heroStats = [
   { number: '10+', label: 'Years Experience' },
   { number: '15+', label: 'Products Shipped' },
   { number: '5+', label: 'Industries Served' },
+]
+
+export const heroTechSkills = [
+  'Swift',
+  'SwiftUI',
+  'Python',
+  'React',
+  'Flutter',
+  'iOS',
+  'UIKit',
+  'Clean Architecture',
 ]
 
 export const aboutText = [

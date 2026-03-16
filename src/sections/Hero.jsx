@@ -1,4 +1,4 @@
-import { siteConfig, heroStats } from '@data/siteData'
+import { siteConfig, heroStats, heroTechSkills } from '@data/siteData'
 import profilePhoto from '@assets/profile.png'
 import './Hero.css'
 
@@ -15,9 +15,13 @@ export default function Hero() {
       <div className="hero__grid">
         {/* Left — Content */}
         <div className="hero__content">
-          <p className="hero__eyebrow" style={{ animationDelay: '0.2s' }}>
-            {siteConfig.availability}
-          </p>
+          <div className="hero__availability" style={{ animationDelay: '0.2s' }}>
+            <div className="hero__availability-top">
+              <span className="hero__availability-dot" />
+              <span className="hero__availability-text">{siteConfig.availability}</span>
+            </div>
+            <span className="hero__availability-roles">{siteConfig.targetRoles}</span>
+          </div>
 
           <h1 className="hero__headline" style={{ animationDelay: '0.35s' }}>
             {siteConfig.name}.
@@ -45,27 +49,41 @@ export default function Hero() {
               Download resume
             </a>
           </div>
-
-          <div className="hero__stats" style={{ animationDelay: '0.95s' }}>
-            {heroStats.map((stat) => (
-              <div className="hero__stat" key={stat.label}>
-                <span className="hero__stat-number">{stat.number}</span>
-                <span className="hero__stat-label">{stat.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Right — Photo */}
-        <div className="hero__photo-col" style={{ animationDelay: '0.5s' }}>
-          <div className="hero__photo-frame">
-            <img
-              src={profilePhoto}
-              alt={siteConfig.name}
-              className="hero__photo"
-              width="420"
-              height="420"
-            />
+        {/* Center — Stats (vertical) */}
+        <div className="hero__stats-col" style={{ animationDelay: '0.95s' }}>
+          {heroStats.map((stat) => (
+            <div className="hero__stat" key={stat.label}>
+              <span className="hero__stat-number">{stat.number}</span>
+              <span className="hero__stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Right — Photo + Tech */}
+        <div className="hero__sidebar" style={{ animationDelay: '0.5s' }}>
+          <div className="hero__photo-col">
+            <div className="hero__photo-frame">
+              <img
+                src={profilePhoto}
+                alt={siteConfig.name}
+                className="hero__photo"
+                width="280"
+                height="280"
+              />
+            </div>
+          </div>
+
+          <div className="hero__tech" style={{ animationDelay: '1.1s' }}>
+            <span className="hero__tech-label">Tech Stack</span>
+            <div className="hero__tech-pills">
+              {heroTechSkills.map((skill) => (
+                <span className="hero__tech-pill" key={skill}>
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
