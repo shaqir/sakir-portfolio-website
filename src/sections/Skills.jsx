@@ -1,6 +1,9 @@
 import { useScrollReveal } from '@hooks'
 import { skillCategories } from '@data/siteData'
+import { SectionIcon } from '@components/Icons'
 import './Skills.css'
+
+const cardAccents = ['#2997ff', '#bf5af2', '#30d158', '#ff9f0a', '#64d2ff', '#ff375f']
 
 export default function Skills() {
   const ref = useScrollReveal()
@@ -19,10 +22,16 @@ export default function Skills() {
         <div className="skills__grid" data-stagger>
           {skillCategories.map((category, i) => (
             <div
-              className="skills__category reveal--scale"
+              className="skills__card reveal--scale"
               key={category.title}
+              style={{ '--card-accent': cardAccents[i] }}
             >
-              <h3 className="skills__title">{category.title}</h3>
+              <div className="skills__card-header">
+                <span className="skills__card-icon">
+                  <SectionIcon name={category.icon} size={20} />
+                </span>
+                <h3 className="skills__title">{category.title}</h3>
+              </div>
               <div className="skills__tags">
                 {category.skills.map((skill) => (
                   <span
