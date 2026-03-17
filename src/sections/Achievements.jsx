@@ -3,6 +3,8 @@ import { achievements } from '@data/siteData'
 import { SectionIcon } from '@components/Icons'
 import './Achievements.css'
 
+const cardAccents = ['#2997ff', '#ff9f0a', '#ffd60a', '#bf5af2', '#30d158', '#ff375f']
+
 export default function Achievements() {
   const ref = useScrollReveal()
 
@@ -20,9 +22,10 @@ export default function Achievements() {
             <div
               className="achievement reveal--scale"
               key={item.title}
+              style={{ '--card-accent': cardAccents[i] }}
             >
               <span className="achievement__icon">
-                <SectionIcon name={item.icon} size={20} />
+                <SectionIcon name={item.icon} size={22} />
               </span>
               <h4 className="achievement__title">{item.title}</h4>
               <p className="achievement__desc">{item.description}</p>

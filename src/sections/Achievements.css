@@ -1,44 +1,85 @@
+/* ═══════════════════════════════════════════
+   ACHIEVEMENTS — card boxes with accent colors
+   ═══════════════════════════════════════════ */
+
 .achievements__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 1.25rem;
 }
 
 .achievement {
-  text-align: center;
+  position: relative;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+/* Accent top bar */
+.achievement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-accent);
+  opacity: 0.6;
+  transition: opacity 0.4s var(--ease-out-expo);
+}
+
+.achievement:hover {
+  border-color: color-mix(in srgb, var(--card-accent) 35%, transparent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--card-accent) 10%, transparent);
+}
+
+.achievement:hover::before {
+  opacity: 1;
 }
 
 .achievement__icon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: var(--card-bg);
-  color: var(--accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+  color: var(--card-accent);
   margin-bottom: 1.25rem;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.achievement:hover .achievement__icon {
+  background: color-mix(in srgb, var(--card-accent) 20%, transparent);
+  transform: scale(1.05);
 }
 
 .achievement__title {
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
 .achievement__desc {
   font-size: 0.9375rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 320px;
-  margin: 0 auto;
+  color: var(--text-primary);
+  opacity: 0.75;
+  line-height: 1.65;
 }
 
-@media (max-width: 768px) {
+/* ─── Responsive ─── */
+
+@media (max-width: 1024px) {
   .achievements__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
   }
 }
 

@@ -1,63 +1,118 @@
+/* ═══════════════════════════════════════════
+   TESTIMONIALS — card boxes with colored accents
+   ═══════════════════════════════════════════ */
+
 .testimonials__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .testimonial {
+  position: relative;
   background: var(--card-bg);
-  border-radius: 20px;
-  padding: 2.25rem;
-  transition:
-    background var(--transition-base),
-    transform var(--transition-base);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+/* Accent top bar */
+.testimonial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--testimonial-accent);
+  opacity: 0.4;
+  transition: opacity 0.4s var(--ease-out-expo);
 }
 
 .testimonial:hover {
-  background: var(--card-hover);
-  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--testimonial-accent) 30%, transparent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--testimonial-accent) 8%, transparent);
 }
+
+.testimonial:hover::before {
+  opacity: 1;
+}
+
+/* ─── Quote mark ─── */
+
+.testimonial__quote-mark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--testimonial-accent);
+  opacity: 0.5;
+  margin-bottom: -0.25rem;
+}
+
+/* ─── Quote text ─── */
 
 .testimonial__quote {
   font-size: 0.9375rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-style: italic;
+  color: var(--text-primary);
+  opacity: 0.8;
+  line-height: 1.75;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
+
+/* ─── Author ─── */
 
 .testimonial__author {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
 }
 
 .testimonial__avatar {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
+  background: color-mix(in srgb, var(--testimonial-accent) 15%, transparent);
+  color: var(--testimonial-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   flex-shrink: 0;
+  letter-spacing: 0.02em;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.testimonial:hover .testimonial__avatar {
+  background: color-mix(in srgb, var(--testimonial-accent) 25%, transparent);
+  transform: scale(1.05);
 }
 
 .testimonial__name {
   display: block;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: var(--text-primary);
 }
 
 .testimonial__role {
   display: block;
-  font-size: 0.75rem;
-  color: var(--text-tertiary);
+  font-size: 0.8125rem;
+  color: var(--testimonial-accent);
+  font-weight: 500;
+  opacity: 0.8;
 }
+
+/* ─── Responsive ─── */
 
 @media (max-width: 1024px) {
   .testimonials__grid {
