@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Sun, Moon, Menu, X } from 'lucide-react'
+import { AppleIcon } from '@components/Icons'
 import { navLinks, siteConfig } from '@data/siteData'
 import './Navbar.css'
 
@@ -21,7 +22,7 @@ export default function Navbar({ theme, toggleTheme }) {
     <nav className="nav" role="navigation" aria-label="Main navigation">
       <div className="container container--wide nav__inner">
         <a href="#hero" className="nav__brand" onClick={(e) => handleLinkClick(e, '#hero')}>
-          Home
+          <AppleIcon size={18} />
         </a>
 
         <div className={`nav__right ${mobileOpen ? 'active' : ''}`}>
