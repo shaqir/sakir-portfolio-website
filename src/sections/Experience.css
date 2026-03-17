@@ -13,10 +13,35 @@
 
 .exp__header {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
+}
+
+.exp__title-row {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+}
+
+.exp__logo-link {
+  flex-shrink: 0;
+}
+
+.exp__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid var(--border);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.exp__logo-link:hover .exp__logo {
+  border-color: var(--border-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .exp__role {
@@ -28,17 +53,37 @@
   margin-bottom: 0.15rem;
 }
 
-.exp__company {
+a.exp__company {
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
+  transition: opacity 0.3s var(--ease-out-expo);
 }
 
-.exp__date {
+a.exp__company:hover {
+  opacity: 0.8;
+}
+
+.exp__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
   font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.exp__location {
+  color: #34d399;
+}
+
+.exp__duration {
+  color: #60a5fa;
+}
+
+.exp__separator {
   color: var(--text-tertiary);
-  white-space: nowrap;
-  flex-shrink: 0;
+  opacity: 0.4;
 }
 
 .exp__desc {
@@ -86,8 +131,35 @@
 
 .exp__edu-item {
   display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.exp__edu-logo-link {
+  flex-shrink: 0;
+}
+
+.exp__edu-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid var(--border);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.exp__edu-logo-link:hover .exp__edu-logo {
+  border-color: var(--border-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.exp__edu-info {
+  display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .exp__edu-degree {
@@ -96,15 +168,24 @@
   color: var(--text-primary);
 }
 
-.exp__edu-school {
+a.exp__edu-school {
   font-size: 0.875rem;
   color: var(--accent);
   font-weight: 500;
+  transition: opacity 0.3s var(--ease-out-expo);
 }
 
-.exp__edu-meta {
+a.exp__edu-school:hover {
+  opacity: 0.8;
+}
+
+.exp__edu-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
   font-size: 0.8125rem;
-  color: var(--text-tertiary);
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

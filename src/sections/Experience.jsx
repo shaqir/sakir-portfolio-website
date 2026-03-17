@@ -23,11 +23,39 @@ export default function Experience() {
               key={exp.title + exp.company}
             >
               <div className="exp__header">
-                <div>
-                  <h3 className="exp__role">{exp.title}</h3>
-                  <span className="exp__company">{exp.company}</span>
+                <div className="exp__title-row">
+                  {exp.logo && (
+                    <a
+                      href={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exp__logo-link"
+                    >
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        className="exp__logo"
+                        loading="lazy"
+                      />
+                    </a>
+                  )}
+                  <div>
+                    <h3 className="exp__role">{exp.title}</h3>
+                    <a
+                      href={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exp__company"
+                    >
+                      {exp.company}
+                    </a>
+                    <div className="exp__meta">
+                      <span className="exp__location">{exp.meta[0]}</span>
+                      <span className="exp__separator">·</span>
+                      <span className="exp__duration">{exp.meta[1]}</span>
+                    </div>
+                  </div>
                 </div>
-                <span className="exp__date">{exp.meta[0]}</span>
               </div>
               <p className="exp__desc">{exp.description}</p>
               <div className="exp__tags">
@@ -44,11 +72,43 @@ export default function Experience() {
           <div className="exp__edu-grid">
             {education.map((edu) => (
               <div className="exp__edu-item" key={edu.degree + edu.school}>
-                <h4 className="exp__edu-degree">{edu.degree}</h4>
-                <span className="exp__edu-school">{edu.school}</span>
-                {edu.meta.length > 0 && (
-                  <span className="exp__edu-meta">{edu.meta.join(' \u00b7 ')}</span>
+                {edu.logo && (
+                  <a
+                    href={edu.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exp__edu-logo-link"
+                  >
+                    <img
+                      src={edu.logo}
+                      alt={`${edu.school} logo`}
+                      className="exp__edu-logo"
+                      loading="lazy"
+                    />
+                  </a>
                 )}
+                <div className="exp__edu-info">
+                  <h4 className="exp__edu-degree">{edu.degree}</h4>
+                  <a
+                    href={edu.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exp__edu-school"
+                  >
+                    {edu.school}
+                  </a>
+                  {edu.meta.length > 0 && (
+                    <div className="exp__edu-meta-row">
+                      <span className="exp__location">{edu.meta[0]}</span>
+                      {edu.meta[1] && (
+                        <>
+                          <span className="exp__separator">·</span>
+                          <span className="exp__duration">{edu.meta[1]}</span>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>

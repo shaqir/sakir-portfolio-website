@@ -5,6 +5,14 @@
  * ═══════════════════════════════════════════════════════════════
  */
 
+import techMahindraLogo from '@assets/logos/techmahindra.png'
+import aclDigitalLogo from '@assets/logos/acldigital.png'
+import openxcellLogo from '@assets/logos/openxcell.png'
+import saitLogo from '@assets/logos/sait.png'
+import macewanLogo from '@assets/logos/macewan.png'
+import dduLogo from '@assets/logos/ddu.png'
+import bbitLogo from '@assets/logos/bbit.png'
+
 export const siteConfig = {
   name: 'Sakir Saiyed',
   title: 'AI Engineer & Senior Mobile Developer',
@@ -24,8 +32,8 @@ export const socialLinks = {
 }
 
 export const navLinks = [
-  { label: 'Work', href: '#projects' },
   { label: 'About', href: '#about' },
+  { label: 'Work', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -230,7 +238,9 @@ export const experiences = [
   {
     title: 'Senior iOS & Flutter Engineer',
     company: 'Tech Mahindra',
-    meta: ['Pune', 'Aug 2022 — Aug 2024', '2 years'],
+    website: 'https://www.borngroup.com/about/tech-mahindra',
+    logo: techMahindraLogo,
+    meta: ['Pune', 'Aug 2022 — Aug 2024'],
     description:
       'Architected production iOS apps using Swift, SwiftUI, MVVM, and Clean Architecture across enterprise client products. Owned full App Store lifecycle including signing, provisioning, and coordinated releases. Led code reviews, mentored junior developers, and integrated third-party SDKs and RESTful APIs.',
     tags: ['Swift', 'SwiftUI', 'MVVM', 'Clean Architecture', 'REST APIs', 'Mentoring'],
@@ -238,7 +248,9 @@ export const experiences = [
   {
     title: 'Principal iOS Engineer',
     company: 'Volansys Technologies',
-    meta: ['Ahmedabad', 'Sep 2017 — Aug 2022', '4.4 years'],
+    website: 'https://www.acldigital.com',
+    logo: aclDigitalLogo,
+    meta: ['Ahmedabad', 'Sep 2017 — Aug 2022'],
     description:
       'Led architecture for IoT and healthcare iOS apps using Swift, SwiftUI, and MVVM. Built BLE and Wi-Fi communication layers for hardware products. Implemented security-critical features with LocalAuthentication and encryption. Profiled and resolved memory leaks and CPU bottlenecks using Instruments.',
     tags: ['Swift', 'BLE', 'IoT', 'Security', 'Azure', 'Instruments'],
@@ -246,7 +258,10 @@ export const experiences = [
   {
     title: 'iOS Engineer',
     company: 'Openxcell Technolabs',
-    meta: ['Ahmedabad', 'May 2013 — Aug 2017', '4.2 years'],
+    website: 'https://www.openxcell.com',
+    logo: openxcellLogo,
+
+    meta: ['Ahmedabad', 'May 2013 — Aug 2017'],
     description:
       'Built and shipped multiple iOS apps using Swift, Objective-C, and foundational Apple frameworks. Delivered interactive UIs with Core Animation and MapKit. Developed systematic debugging and root cause analysis approaches across complex applications.',
     tags: ['Swift', 'Objective-C', 'Core Animation', 'MapKit', 'CocoaPods'],
@@ -257,26 +272,34 @@ export const education = [
   {
     degree: 'Integrated Artificial Intelligence',
     school: 'Southern Alberta Institute of Technology (SAIT)',
+    website: 'https://www.sait.ca',
+    logo: saitLogo,
     field: 'Artificial Intelligence',
     meta: ['Calgary', 'Sep 2025 — Apr 2026'],
   },
   {
     degree: 'Project Management & Professional Certificate',
     school: 'MacEwan University',
+    website: 'https://www.macewan.ca/home',
+    logo: macewanLogo,
     field: 'Project Management',
     meta: ['Edmonton', 'Sep 2024 — Aug 2025'],
   },
   {
     degree: 'B.Tech in Information Technology',
     school: 'Dharmsinh Desai University',
+    website: 'https://www.ddu.ac.in',
+    logo: dduLogo,
     field: 'Information Technology',
-    meta: ['Nadiad, Gujarat, India', 'Aug 2010 — May 2013', '3 years'],
+    meta: ['Nadiad, Gujarat, India', 'Aug 2010 — May 2013'],
   },
   {
     degree: 'Diploma in Information Technology',
     school: 'BBIT',
+    website: 'http://www.bbit.ac.in/',
+    logo: bbitLogo,
     field: 'Information Technology',
-    meta: ['Vallabh Vidyanagar, Gujarat, India', 'Aug 2007 — Jul 2010', '3 years'],
+    meta: ['Vallabh Vidyanagar, Gujarat, India', 'Aug 2007 — Jul 2010'],
   },
 ]
 
