@@ -2,6 +2,12 @@ import { siteConfig, heroTechSkills } from '@data/siteData'
 import profilePhoto from '@assets/profile.png'
 import './Hero.css'
 
+const heroStats = [
+  { number: '10+', keyword: 'Years', sub: 'in Production', color: '#2997ff' },
+  { number: '15+', keyword: 'Products', sub: 'Shipped', color: '#bf5af2' },
+  { number: '5+', keyword: 'Industries', sub: 'Served', color: '#30d158' },
+]
+
 export default function Hero() {
   return (
     <section className="hero" id="hero">
@@ -36,17 +42,7 @@ export default function Hero() {
             {siteConfig.tagline}
           </p>
 
-          <div className="hero__tech" style={{ animationDelay: '0.8s' }}>
-            <div className="hero__tech-pills">
-              {heroTechSkills.map((skill) => (
-                <span className="hero__tech-pill" key={skill}>
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="hero__actions" style={{ animationDelay: '0.95s' }}>
+          <div className="hero__actions" style={{ animationDelay: '0.8s' }}>
             <a href="#projects" className="hero__cta-primary">
               View my work
               <span className="hero__cta-arrow">&rsaquo;</span>
@@ -58,7 +54,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — Photo */}
+        {/* Center — Stats */}
+        <div className="hero__stats-col" style={{ animationDelay: '0.9s' }}>
+          {heroStats.map((stat) => (
+            <div className="hero__stat" key={stat.label}>
+              <span className="hero__stat-number" style={{ color: stat.color }}>
+                {stat.number}
+              </span>
+              <span className="hero__stat-label">
+                <span className="hero__stat-keyword">{stat.keyword}</span> {stat.sub}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Right — Photo + Tech */}
         <div className="hero__sidebar" style={{ animationDelay: '0.5s' }}>
           <div className="hero__photo-frame">
             <img
@@ -68,6 +78,16 @@ export default function Hero() {
               width="340"
               height="340"
             />
+          </div>
+          <div className="hero__tech" style={{ animationDelay: '1s' }}>
+            <span className="hero__tech-label">Tech Stack</span>
+            <div className="hero__tech-pills">
+              {heroTechSkills.map((skill) => (
+                <span className="hero__tech-pill" key={skill}>
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

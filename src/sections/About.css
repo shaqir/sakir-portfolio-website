@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
-   ABOUT — redesigned with color accents,
-   stats row, and vibrant highlight cards
+   ABOUT — redesigned with domain cards
+   and vibrant highlight cards
    ═══════════════════════════════════════════ */
 
 .about__headline-gradient {
@@ -10,7 +10,7 @@
   background-clip: text;
 }
 
-/* ─── Content: left (heading + prose) + right (stats) ─── */
+/* ─── Content: left (heading + prose) + right (domains) ─── */
 
 .about__content {
   display: grid;
@@ -42,39 +42,77 @@
   margin-top: 1.25rem;
 }
 
-/* ─── Stats column ─── */
+/* ─── Domains column ─── */
 
-.about__stats {
+.about__domains {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 0 3rem;
+  gap: 1.25rem;
+  padding-left: 4rem;
   border-left: 1px solid var(--border);
 }
 
-.about__stat {
+.about__domains-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about__domains-list {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about__domain {
+  display: flex;
   align-items: center;
-  text-align: center;
-  gap: 0.25rem;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  transition: all 0.35s var(--ease-out-expo);
+  cursor: default;
 }
 
-.about__stat-number {
+.about__domain:hover {
+  border-color: color-mix(in srgb, var(--domain-color) 40%, transparent);
+  transform: translateX(-4px);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--domain-color) 10%, transparent);
+}
+
+.about__domain-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--domain-color) 12%, transparent);
+  color: var(--domain-color);
+  flex-shrink: 0;
+  transition: all 0.35s var(--ease-out-expo);
+}
+
+.about__domain:hover .about__domain-icon {
+  background: color-mix(in srgb, var(--domain-color) 20%, transparent);
+  transform: scale(1.05);
+}
+
+.about__domain-label {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.about__stat-label {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
 /* ─── Highlight cards ─── */
@@ -160,7 +198,7 @@
     gap: 3rem;
   }
 
-  .about__stats {
+  .about__domains {
     padding-left: 3rem;
   }
 }
@@ -171,22 +209,21 @@
     gap: 2.5rem;
   }
 
-  .about__stats {
-    flex-direction: row;
+  .about__domains {
     padding-left: 0;
     border-left: none;
     border-top: 1px solid var(--border);
     padding-top: 2rem;
-    justify-content: space-between;
   }
 
-  .about__stat {
-    align-items: center;
-    text-align: center;
+  .about__domains-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
-  .about__stat-number {
-    font-size: 2rem;
+  .about__domain:hover {
+    transform: translateY(-2px);
   }
 
   .about__prose p {

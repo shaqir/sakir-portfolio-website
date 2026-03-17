@@ -5,6 +5,14 @@ import './About.css'
 
 const highlightColors = ['#2997ff', '#bf5af2', '#30d158', '#ff9f0a']
 
+const domains = [
+  { label: 'Healthcare', icon: 'heart-pulse', color: '#ff375f' },
+  { label: 'Fintech', icon: 'activity', color: '#ff9f0a' },
+  { label: 'IoT & Smart Devices', icon: 'smartphone', color: '#2997ff' },
+  { label: 'E-Commerce', icon: 'package', color: '#30d158' },
+  { label: 'Enterprise', icon: 'blocks', color: '#bf5af2' },
+]
+
 export default function About() {
   const ref = useScrollReveal()
 
@@ -26,24 +34,21 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about__stats">
-            <div className="about__stat">
-              <span className="about__stat-number" style={{ color: '#2997ff' }}>
-                10+
-              </span>
-              <span className="about__stat-label">Years in Production</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-number" style={{ color: '#bf5af2' }}>
-                15+
-              </span>
-              <span className="about__stat-label">Products Shipped</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-number" style={{ color: '#30d158' }}>
-                5+
-              </span>
-              <span className="about__stat-label">Industries Served</span>
+          <div className="about__domains">
+            <span className="about__domains-label">Domains</span>
+            <div className="about__domains-list">
+              {domains.map((d) => (
+                <div
+                  className="about__domain"
+                  key={d.label}
+                  style={{ '--domain-color': d.color }}
+                >
+                  <span className="about__domain-icon">
+                    <SectionIcon name={d.icon} size={18} />
+                  </span>
+                  <span className="about__domain-label">{d.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
