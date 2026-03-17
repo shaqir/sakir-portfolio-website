@@ -1,10 +1,8 @@
-import { siteConfig, heroStats, heroTechSkills } from '@data/siteData'
+import { siteConfig, heroTechSkills } from '@data/siteData'
 import profilePhoto from '@assets/profile.png'
 import './Hero.css'
 
 export default function Hero() {
-  const [titlePart1, titlePart2] = siteConfig.title.split(' and ')
-
   return (
     <section className="hero" id="hero">
       {/* Animated gradient orbs */}
@@ -24,59 +22,21 @@ export default function Hero() {
           </div>
 
           <h1 className="hero__headline" style={{ animationDelay: '0.35s' }}>
-            {siteConfig.name}.
+            {siteConfig.name}
+            <span className="hero__headline-dot">.</span>
           </h1>
 
           <p className="hero__subhead" style={{ animationDelay: '0.5s' }}>
-            <span className="hero__subhead-line">{titlePart1}</span>
-            {titlePart2 && (
-              <>
-                <span className="hero__subhead-amp"> & </span>
-                <span className="hero__subhead-line">{titlePart2}</span>
-              </>
-            )}
+            <span className="hero__role hero__role--ai">AI Engineer</span>
+            <span className="hero__role-amp">&</span>
+            <span className="hero__role hero__role--mobile">Senior Mobile Developer</span>
           </p>
 
           <p className="hero__tagline" style={{ animationDelay: '0.65s' }}>
             {siteConfig.tagline}
           </p>
 
-          <div className="hero__actions" style={{ animationDelay: '0.8s' }}>
-            <a href="#projects" className="link-arrow">
-              View my work
-            </a>
-            <a href={siteConfig.resumeUrl} download className="link-arrow">
-              Download resume
-            </a>
-          </div>
-        </div>
-
-        {/* Center — Stats (vertical) */}
-        <div className="hero__stats-col" style={{ animationDelay: '0.95s' }}>
-          {heroStats.map((stat) => (
-            <div className="hero__stat" key={stat.label}>
-              <span className="hero__stat-number">{stat.number}</span>
-              <span className="hero__stat-label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Right — Photo + Tech */}
-        <div className="hero__sidebar" style={{ animationDelay: '0.5s' }}>
-          <div className="hero__photo-col">
-            <div className="hero__photo-frame">
-              <img
-                src={profilePhoto}
-                alt={siteConfig.name}
-                className="hero__photo"
-                width="280"
-                height="280"
-              />
-            </div>
-          </div>
-
-          <div className="hero__tech" style={{ animationDelay: '1.1s' }}>
-            <span className="hero__tech-label">Tech Stack</span>
+          <div className="hero__tech" style={{ animationDelay: '0.8s' }}>
             <div className="hero__tech-pills">
               {heroTechSkills.map((skill) => (
                 <span className="hero__tech-pill" key={skill}>
@@ -84,6 +44,30 @@ export default function Hero() {
                 </span>
               ))}
             </div>
+          </div>
+
+          <div className="hero__actions" style={{ animationDelay: '0.95s' }}>
+            <a href="#projects" className="hero__cta-primary">
+              View my work
+              <span className="hero__cta-arrow">&rsaquo;</span>
+            </a>
+            <a href={siteConfig.resumeUrl} download className="hero__cta-secondary">
+              Download resume
+              <span className="hero__cta-arrow">&rsaquo;</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right — Photo */}
+        <div className="hero__sidebar" style={{ animationDelay: '0.5s' }}>
+          <div className="hero__photo-frame">
+            <img
+              src={profilePhoto}
+              alt={siteConfig.name}
+              className="hero__photo"
+              width="340"
+              height="340"
+            />
           </div>
         </div>
       </div>
