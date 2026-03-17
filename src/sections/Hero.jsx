@@ -19,28 +19,28 @@ export default function Hero() {
       <div className="hero__grid">
         {/* Left — Content */}
         <div className="hero__content">
-          <div className="hero__availability" style={{ animationDelay: '0.2s' }}>
+          <h1 className="hero__headline" style={{ animationDelay: '0.2s' }}>
+            {siteConfig.name}
+            <span className="hero__headline-dot">.</span>
+          </h1>
+
+          <p className="hero__subhead" style={{ animationDelay: '0.35s' }}>
+            <span className="hero__role hero__role--ai">AI Engineer</span>
+            <span className="hero__role-amp">&</span>
+            <span className="hero__role hero__role--mobile">Senior Mobile Developer</span>
+          </p>
+
+          <p className="hero__tagline" style={{ animationDelay: '0.5s' }}>
+            {siteConfig.tagline}
+          </p>
+
+          <div className="hero__availability" style={{ animationDelay: '0.65s' }}>
             <div className="hero__availability-top">
               <span className="hero__availability-dot" />
               <span className="hero__availability-text">{siteConfig.availability}</span>
             </div>
             <span className="hero__availability-roles">{siteConfig.targetRoles}</span>
           </div>
-
-          <h1 className="hero__headline" style={{ animationDelay: '0.35s' }}>
-            {siteConfig.name}
-            <span className="hero__headline-dot">.</span>
-          </h1>
-
-          <p className="hero__subhead" style={{ animationDelay: '0.5s' }}>
-            <span className="hero__role hero__role--ai">AI Engineer</span>
-            <span className="hero__role-amp">&</span>
-            <span className="hero__role hero__role--mobile">Senior Mobile Developer</span>
-          </p>
-
-          <p className="hero__tagline" style={{ animationDelay: '0.65s' }}>
-            {siteConfig.tagline}
-          </p>
 
           <div className="hero__actions" style={{ animationDelay: '0.8s' }}>
             <a href="#projects" className="hero__cta-primary">
