@@ -42,7 +42,20 @@ export default function Hero() {
             <span className="hero__availability-roles">{siteConfig.targetRoles}</span>
           </div>
 
-          <div className="hero__actions" style={{ animationDelay: '0.8s' }}>
+          <div className="hero__stats-row" style={{ animationDelay: '0.75s' }}>
+            {heroStats.map((stat) => (
+              <div className="hero__stat" key={stat.keyword}>
+                <span className="hero__stat-number" style={{ color: stat.color }}>
+                  {stat.number}
+                </span>
+                <span className="hero__stat-label">
+                  <span className="hero__stat-keyword">{stat.keyword}</span> {stat.sub}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="hero__actions" style={{ animationDelay: '0.9s' }}>
             <a href="#projects" className="hero__cta-primary">
               View my work
               <span className="hero__cta-arrow">&rsaquo;</span>
@@ -52,20 +65,6 @@ export default function Hero() {
               <span className="hero__cta-arrow">&rsaquo;</span>
             </a>
           </div>
-        </div>
-
-        {/* Center — Stats */}
-        <div className="hero__stats-col" style={{ animationDelay: '0.9s' }}>
-          {heroStats.map((stat) => (
-            <div className="hero__stat" key={stat.label}>
-              <span className="hero__stat-number" style={{ color: stat.color }}>
-                {stat.number}
-              </span>
-              <span className="hero__stat-label">
-                <span className="hero__stat-keyword">{stat.keyword}</span> {stat.sub}
-              </span>
-            </div>
-          ))}
         </div>
 
         {/* Right — Photo + Tech */}

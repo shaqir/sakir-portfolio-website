@@ -126,32 +126,41 @@
   max-width: var(--container-wide);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr auto 0.8fr;
-  gap: clamp(2rem, 3.5vw, 3rem);
-  align-items: stretch;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
 }
 
-/* ─── Center — Stats column ─── */
+/* ─── Stats row (inline, below availability) ─── */
 
-.hero__stats-col {
-  position: relative;
+.hero__stats-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.25rem;
-  padding: 0.5rem 1.5rem;
+  flex-direction: row;
+  align-items: stretch;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-bottom: 2rem;
+  padding: 0;
   animation: fadeUp 1.2s var(--ease-apple) both;
 }
 
-.hero__stats-col::before,
-.hero__stats-col::after {
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+  position: relative;
+  padding-right: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+/* Subtle vertical divider between stats */
+.hero__stat:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0;
+  top: 12%;
+  bottom: 12%;
   width: 1px;
-  height: 55%;
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -161,41 +170,29 @@
   );
 }
 
-.hero__stats-col::before {
-  left: calc(-1 * clamp(1rem, 1.75vw, 1.5rem));
-}
-
-.hero__stats-col::after {
-  right: calc(-1 * clamp(1rem, 1.75vw, 1.5rem));
-}
-
-.hero__stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  text-align: center;
+.hero__stat:last-child {
+  padding-right: 0;
 }
 
 .hero__stat-number {
   font-family: var(--font-display);
-  font-size: clamp(28px, 3vw, 36px);
+  font-size: clamp(26px, 2.6vw, 34px);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
-  align-self: flex-start;
 }
 
 .hero__stat-label {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--text-tertiary);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .hero__stat-keyword {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--text-secondary);
 }
@@ -584,21 +581,14 @@
     order: 2;
   }
 
-  .hero__stats-col {
-    order: 3;
-    flex-direction: row;
-    gap: 2.5rem;
-    padding: 1.5rem 0;
+  .hero__stats-row {
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 2rem);
   }
 
-  .hero__stats-col::before,
-  .hero__stats-col::after {
-    display: none;
-  }
-
-  .hero__stats-col {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  .hero__stat {
+    align-items: center;
+    text-align: center;
   }
 
   .hero__sidebar {
@@ -619,6 +609,24 @@
 
   .hero__tech-pills {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__stats-row {
+    gap: 0.75rem;
+  }
+
+  .hero__stat {
+    padding-right: 0.75rem;
+  }
+
+  .hero__stat-number {
+    font-size: 22px;
+  }
+
+  .hero__stat-label {
+    font-size: 9.5px;
   }
 }
 
