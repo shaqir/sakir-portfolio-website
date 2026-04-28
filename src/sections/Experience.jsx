@@ -17,52 +17,133 @@ export default function Experience() {
           </p>
         </div>
         <div className="exp__list" data-stagger>
-          {experiences.map((exp, i) => (
+          {experiences.map((exp) => (
             <div
-              className="exp__item reveal"
-              key={exp.title + exp.company}
+              className={`exp__item reveal${exp.roles ? ' exp__item--multi' : ''}`}
+              key={exp.company + (exp.title || '')}
             >
-              <div className="exp__header">
-                <div className="exp__title-row">
-                  {exp.logo && (
-                    <a
-                      href={exp.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="exp__logo-link"
-                    >
-                      <img
-                        src={exp.logo}
-                        alt={`${exp.company} logo`}
-                        className="exp__logo"
-                        loading="lazy"
-                      />
-                    </a>
-                  )}
-                  <div>
-                    <h3 className="exp__role">{exp.title}</h3>
-                    <a
-                      href={exp.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="exp__company"
-                    >
-                      {exp.company}
-                    </a>
-                    <div className="exp__meta">
-                      <span className="exp__location">{exp.meta[0]}</span>
-                      <span className="exp__separator">·</span>
-                      <span className="exp__duration">{exp.meta[1]}</span>
+              {exp.roles ? (
+                <>
+                  <div className="exp__company-header">
+                    {exp.logo &&
+                      (exp.website ? (
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="exp__logo-link"
+                        >
+                          <img
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="exp__logo"
+                            loading="lazy"
+                          />
+                        </a>
+                      ) : (
+                        <img
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          className="exp__logo"
+                          loading="lazy"
+                        />
+                      ))}
+                    <div className="exp__company-info">
+                      {exp.website ? (
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="exp__company exp__company--lead"
+                        >
+                          {exp.company}
+                        </a>
+                      ) : (
+                        <span className="exp__company exp__company--lead">{exp.company}</span>
+                      )}
+                      {exp.meta && (
+                        <div className="exp__company-meta">
+                          {exp.meta.join(' · ')}
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
-              </div>
-              <p className="exp__desc">{exp.description}</p>
-              <div className="exp__tags">
-                {exp.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
+                  <ol className="exp__roles">
+                    {exp.roles.map((role) => (
+                      <li className="exp__role-item" key={role.title}>
+                        <h4 className="exp__role">{role.title}</h4>
+                        <div className="exp__meta">
+                          <span className="exp__location">{role.meta[0]}</span>
+                          <span className="exp__separator">·</span>
+                          <span className="exp__duration">{role.meta[1]}</span>
+                        </div>
+                        <p className="exp__desc">{role.description}</p>
+                        <div className="exp__tags">
+                          {role.tags.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                          ))}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              ) : (
+                <>
+                  <div className="exp__header">
+                    <div className="exp__title-row">
+                      {exp.logo &&
+                        (exp.website ? (
+                          <a
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="exp__logo-link"
+                          >
+                            <img
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                              className="exp__logo"
+                              loading="lazy"
+                            />
+                          </a>
+                        ) : (
+                          <img
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="exp__logo"
+                            loading="lazy"
+                          />
+                        ))}
+                      <div>
+                        <h3 className="exp__role">{exp.title}</h3>
+                        {exp.website ? (
+                          <a
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="exp__company"
+                          >
+                            {exp.company}
+                          </a>
+                        ) : (
+                          <span className="exp__company">{exp.company}</span>
+                        )}
+                        <div className="exp__meta">
+                          <span className="exp__location">{exp.meta[0]}</span>
+                          <span className="exp__separator">·</span>
+                          <span className="exp__duration">{exp.meta[1]}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="exp__desc">{exp.description}</p>
+                  <div className="exp__tags">
+                    {exp.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>

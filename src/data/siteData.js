@@ -6,12 +6,14 @@
  */
 
 import techMahindraLogo from '@assets/logos/techmahindra.png'
+import bornGroupLogo from '@assets/logos/borngroup.png'
 import aclDigitalLogo from '@assets/logos/acldigital.png'
 import openxcellLogo from '@assets/logos/openxcell.png'
 import saitLogo from '@assets/logos/sait.png'
 import macewanLogo from '@assets/logos/macewan.png'
 import dduLogo from '@assets/logos/ddu.png'
 import bbitLogo from '@assets/logos/bbit.png'
+import profileImage from '@assets/profile.png'
 
 export const siteConfig = {
   name: 'Sakir Saiyed',
@@ -236,24 +238,64 @@ export const projects = [
 
 export const experiences = [
   {
-    title: 'Senior iOS & Flutter Engineer',
-    company: 'Tech Mahindra',
-    website: 'https://www.borngroup.com/about/tech-mahindra',
-    logo: techMahindraLogo,
-    meta: ['Pune', 'Aug 2022 — Aug 2024'],
+    title: 'Professional Development — AI Engineering Specialization (SAIT) + PM Credential (MacEwan)',
+    company: 'Career Break · Canada',
+    logo: saitLogo,
+    meta: ['Calgary & Edmonton, Alberta, Canada', 'Sep 2024 — Apr 2026 · 1 yr 8 mos'],
     description:
-      'Architected production iOS apps using Swift, SwiftUI, MVVM, and Clean Architecture across enterprise client products. Owned full App Store lifecycle including signing, provisioning, and coordinated releases. Led code reviews, mentored junior developers, and integrated third-party SDKs and RESTful APIs.',
-    tags: ['Swift', 'SwiftUI', 'MVVM', 'Clean Architecture', 'REST APIs', 'Mentoring'],
+      'A structured 2-year break to relocate to Canada and complete two full-year academic credentials that complement 10+ years of senior mobile engineering. MacEwan University (Sep 2024 — Aug 2025): PMBOK® methodologies, Agile/Scrum delivery, multicultural team leadership, and stakeholder communication — Grade A. Southern Alberta Institute of Technology (Aug 2025 — Apr 2026): applied statistics, predictive analytics, machine learning, computer vision and NLP fundamentals, and responsible AI in human-centred system design — Grade A. Outcome: senior iOS / Flutter engineer with formal credentials in both project management and AI/ML — positioned for AI-augmented mobile engineering and senior contractor roles.',
+    tags: [
+      'AI / ML',
+      'Predictive Analytics',
+      'Machine Learning',
+      'Responsible AI',
+      'Data Science',
+      'PMBOK®',
+      'Agile / Scrum',
+      'Stakeholder Management',
+    ],
   },
   {
-    title: 'Principal iOS Engineer',
-    company: 'Volansys Technologies',
+    title: 'Flutter Engineer · Freelance',
+    company: 'Racecourse Tracks (Independent Contract)',
+    website: 'https://github.com/shaqir/Racecourse-Flutter',
+    logo: profileImage,
+    meta: ['Remote', '2025'],
+    description:
+      'Built and launched Racecourse Tracks — a production Flutter app delivering analytics for the horse, harness, and greyhound racing industries. Architected with MVVM + Provider state management and Repository Pattern across authentication, content, subscriptions, and analytics. Integrated Firebase Auth, Cloud Firestore, and Cloud Functions; shipped Email/Google/Apple Sign-In, multi-tier subscription with paywall, and side-by-side course comparison across multiple racecourses.',
+    tags: ['Flutter', 'Dart', 'Provider', 'MVVM', 'Firebase', 'Repository Pattern', 'Apple Sign-In'],
+  },
+  {
+    title: 'Senior Mobile Developer · iOS, Flutter',
+    company: 'Born XDS · Tech Mahindra',
+    website: 'https://www.borngroup.com/about/tech-mahindra',
+    logo: techMahindraLogo,
+    meta: ['Pune District, Maharashtra, India', 'Aug 2022 — Aug 2024 · 2 yrs 1 mo'],
+    description:
+      'Joined Born Group in August 2022; following Born Group\'s merger with Tech Mahindra in March 2023, the team now operates as Born XDS. Architected production iOS apps in Swift, SwiftUI, MVVM, and Clean Architecture, owning the full App Store lifecycle. Built and shipped a cross-platform Flutter e-commerce platform (mobile + desktop) covering catalog, search, filters, cart, checkout, payment, orders, and media management — implementing Bloc/Cubit state management with feature-level cubits and integrating REST/JSON APIs through repository-pattern abstractions. Led code reviews and mentored junior developers across both stacks.',
+    tags: ['Swift', 'SwiftUI', 'Flutter', 'Dart', 'Bloc/Cubit', 'MVVM', 'Clean Architecture', 'REST APIs', 'Technical Architecture', 'Mentoring'],
+  },
+  {
+    company: 'ACL Digital · Volansys Technologies',
     website: 'https://www.acldigital.com',
     logo: aclDigitalLogo,
-    meta: ['Ahmedabad', 'Sep 2017 — Aug 2022'],
-    description:
-      'Led architecture for IoT and healthcare iOS apps using Swift, SwiftUI, and MVVM. Built BLE and Wi-Fi communication layers for hardware products. Implemented security-critical features with LocalAuthentication and encryption. Profiled and resolved memory leaks and CPU bottlenecks using Instruments.',
-    tags: ['Swift', 'BLE', 'IoT', 'Security', 'Azure', 'Instruments'],
+    meta: ['Full-time', '5 yrs'],
+    roles: [
+      {
+        title: 'Principal Software Engineer',
+        meta: ['Pune, Maharashtra, India', 'Jul 2020 — Aug 2022 · 2 yrs 2 mos'],
+        description:
+          'Led architecture and technical decisions for IoT and healthcare iOS apps using Swift, SwiftUI, MVVM, and Clean Architecture. Built BLE and Wi-Fi communication layers for hardware products. Implemented security-critical features with LocalAuthentication and encryption. Profiled and resolved memory leaks and CPU bottlenecks using Instruments. Established unit testing practices and CI-level deinit checks to prevent regressions.',
+        tags: ['Swift', 'SwiftUI', 'Unit Testing', 'BLE', 'Clean Architecture', 'Security', 'Azure', 'Instruments'],
+      },
+      {
+        title: 'Senior Software Engineer',
+        meta: ['Ahmedabad, Gujarat, India', 'Sep 2017 — Jul 2020 · 2 yrs 11 mos'],
+        description:
+          'Developed and maintained iOS apps for an IoT industry leader. Led project execution, designed architecture and UI/UX, coordinated planning and estimation, communicated directly with clients, conducted technical interviews, supported presales engagements, submitted apps to the App Store, and authored technical blog posts.',
+        tags: ['Swift', 'Application Development', 'iOS', 'UI/UX', 'App Store', 'Client Communication'],
+      },
+    ],
   },
   {
     title: 'iOS Engineer',
