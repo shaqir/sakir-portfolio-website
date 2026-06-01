@@ -21,7 +21,7 @@ export const siteConfig = {
   tagline: 'Building AI Powered intelligent mobile apps.',
   location: 'Calgary, Alberta, Canada',
   availability: 'Open to opportunities',
-  targetRoles: 'Senior iOS Developer · AI Engineer · Mobile Tech Lead — Contract Roles',
+  targetRoles: 'Senior iOS Developer · Mobile Tech Lead — Contract Roles',
   resumeUrl: '/resume.pdf',
   website: 'https://sakiralisaiyed.com',
 }
