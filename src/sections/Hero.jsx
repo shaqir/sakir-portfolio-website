@@ -80,8 +80,11 @@ export default function Hero() {
             <span className="hero__tech-label">Tech Stack</span>
             <div className="hero__tech-pills">
               {heroTechSkills.map((skill) => (
-                <span className="hero__tech-pill" key={skill}>
-                  {skill}
+                <span
+                  className={`hero__tech-pill ${skill.primary ? 'hero__tech-pill--primary' : ''}`}
+                  key={skill.name}
+                >
+                  {skill.name}
                 </span>
               ))}
             </div>

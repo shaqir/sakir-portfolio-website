@@ -47,15 +47,15 @@ export const heroStats = [
 ]
 
 export const heroTechSkills = [
-  'Swift',
-  'SwiftUI',
-  'Objective-C',
-  'Flutter',
-  'Dart',
-  'Python',
-  'React',
-  'MVVM',
-  'Clean Architecture',
+  { name: 'Swift', primary: true },
+  { name: 'SwiftUI', primary: true },
+  { name: 'Objective-C', primary: true },
+  { name: 'Flutter' },
+  { name: 'Dart' },
+  { name: 'Python' },
+  { name: 'React' },
+  { name: 'MVVM' },
+  { name: 'Clean Architecture' },
 ]
 
 export const aboutText = [

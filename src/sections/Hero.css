@@ -391,6 +391,29 @@
   cursor: default;
 }
 
+.hero__tech-pill--primary {
+  color: #fff;
+  font-weight: 600;
+  border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--gradient-blue) 28%, var(--bg-card)),
+    color-mix(in srgb, var(--gradient-purple) 28%, var(--bg-card))
+  );
+  box-shadow:
+    0 2px 12px color-mix(in srgb, var(--gradient-blue) 18%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.hero__tech-pill--primary:hover {
+  border-color: color-mix(in srgb, var(--accent) 85%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--gradient-blue) 38%, var(--bg-card)),
+    color-mix(in srgb, var(--gradient-purple) 38%, var(--bg-card))
+  );
+}
+
 .hero__tech-pill:hover {
   border-color: color-mix(in srgb, var(--accent) 60%, transparent);
   background: linear-gradient(
