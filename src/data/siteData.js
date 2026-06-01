@@ -17,8 +17,8 @@ import profileImage from '@assets/profile.png'
 
 export const siteConfig = {
   name: 'Sakir Saiyed',
-  title: 'AI Engineer & Senior Mobile Developer',
-  tagline: 'Building AI Powered intelligent mobile and web apps.',
+  title: 'Senior Mobile Developer',
+  tagline: 'Building AI Powered intelligent mobile apps.',
   location: 'Calgary, Alberta, Canada',
   availability: 'Open to opportunities',
   targetRoles: 'Senior iOS Developer · AI Engineer · Mobile Tech Lead — Contract Roles',
