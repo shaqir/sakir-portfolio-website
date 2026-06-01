@@ -91,17 +91,17 @@ export const aboutHighlights = [
 export const skillCategories = [
   {
     icon: 'smartphone',
-    title: 'Mobile Development',
+    title: 'Tech Stack',
     skills: [
       { name: 'Swift', primary: true },
       { name: 'SwiftUI', primary: true },
-      { name: 'UIKit', primary: true },
+      { name: 'Objective-C', primary: true },
       { name: 'Flutter' },
       { name: 'Dart' },
-      { name: 'Combine' },
-      { name: 'Async/Await' },
-      { name: 'CoreData' },
-      { name: 'CoreBluetooth' },
+      { name: 'Python' },
+      { name: 'React' },
+      { name: 'MVVM' },
+      { name: 'Clean Architecture' },
     ],
   },
   {
