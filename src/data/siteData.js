@@ -49,11 +49,12 @@ export const heroStats = [
 export const heroTechSkills = [
   'Swift',
   'SwiftUI',
+  'Objective-C',
+  'Flutter',
+  'Dart',
   'Python',
   'React',
-  'Flutter',
-  'iOS',
-  'UIKit',
+  'MVVM',
   'Clean Architecture',
 ]
 
