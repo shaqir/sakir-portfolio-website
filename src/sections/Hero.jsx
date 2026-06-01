@@ -25,9 +25,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__subhead" style={{ animationDelay: '0.35s' }}>
-            <span className="hero__role hero__role--ai">AI Engineer</span>
-            <span className="hero__role-amp">&</span>
-            <span className="hero__role hero__role--mobile">Senior Mobile Developer</span>
+            <span className="hero__role hero__role--mobile">Senior Mobile Developer - iOS</span>
           </p>
 
           <p className="hero__tagline" style={{ animationDelay: '0.5s' }}>
